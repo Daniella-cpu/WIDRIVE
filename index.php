@@ -1,3 +1,7 @@
+<?php
+require_once 'controllers/autoController.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +94,7 @@
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="1000">
-            <img src="./images/baniere1.jpg" style="height: 600px;" class="d-block w-100" class="animate__zoomIn" alt="...">
+            <img src="./images/baniere1.jpg" style="height: 600px;" class="d-block w-100 " class="animate__zoomIn" alt="...">
             <div class="carousel-caption d-md-block text-white slide-text">
               <h5 class="fs-2 text-uppercase slide-header1 text-sm-center animate__animated animate__zoomIn">Accesseble to all</h5>
               <h1 class="fw-bold slide-header text-md-center animate__animated animate__zoomIn">Very affordable Rates</h1>
@@ -156,59 +160,68 @@
 
       <section class="bg-light">
           <div class="container input-ic">
-            <form >
+            <form action="index.php" method="post">
                 <div class="row justify-content-md-center">
                     <div class="col-md">
-                        <div class="input-group mb-3"> 
-                            <input type="text" class="form-control" placeholder="Your name" >
+                    <div class="text-danger" style="font-size:10px;">*<?php echo $errors['name']; ?></div>
+                        <div class="input-group mb-3 input1"> 
+                            <input type="text" class="form-control" name="name"  placeholder="Your name" >
                             <span class="input-group-text bg-white" id="basic-addon">
-                                <i class="bi bi-envelope"></i>
+                                <i class="bi bi-file-person"></i>
                             </span>
+                            
                           </div>
                         </div>
                    
                       <div class="col-md">
+                       <div class="text-danger" style="font-size:10px;">*<?php echo $errors['location']; ?></div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="where do we pick you at" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" name="location" placeholder="where do we pick you at" aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
-                                <i class="bi bi-envelope"></i>
+                                <i class="bi bi-flag-fill"></i>
                             </span>
+                            
                           </div>
                         </div>
                     
                     
                         <div class="col-md">
+                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['email']; ?></div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="email" class="form-control" style="border:none; padding:16px; boder-radius: 0px;" name="email" placeholder="email address"  aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">
-                                    <i class="bi bi-envelope"></i>
+                                    <i class="bi bi-envelope-fill"></i>
                                 </span>
                               </div>
                         </div>
+                       
 
                         <div class="col-md">
+                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['pickup_time']; ?></div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="09:09--" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control" name="pickup_time" placeholder="09:09--"  aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">
-                                    <i class="bi bi-envelope"></i>
+                                    <i class="bi bi-clock"></i>
                                 </span>
-                              </div>
                             </div>
+                        </div>
                 </div>
 
                 <div class="row justify-content-md-center mt-1">
                     <div class="col-md">
+                    <div class="text-danger" style="font-size:10px;">*<?php echo $errors['phone_num']; ?></div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="For when" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="number" class="form-control" name="phone_num" placeholder="Phone number" aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
-                                <i class="bi bi-envelope"></i>
+                                <i class="bi bi-telephone-fill"></i>
                             </span>
                         </div>
                     </div>
                    
                       <div class="col-md">
+                      <div class="text-danger" style="font-size:10px;">*<?php echo $errors['country']; ?></div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="where are you going" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" name="country" placeholder="where are you going"  aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
                                 <i class="bi bi-envelope"></i>
                             </span>
@@ -217,8 +230,9 @@
                     
                     
                         <div class="col-md">
+                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['days']; ?></div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="For when" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control" name="days" placeholder="For when" aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">
                                     <i class="bi bi-envelope"></i>
                                 </span>
@@ -227,7 +241,7 @@
 
                         <div class="col-md">
                             <div class="input-group mb-3 d-flex justify-content-center">
-                                <button type="submit" style="font-size: 15px;" class="btn btn-md btn-lg btn-warning text-white">
+                                <button type="submit" name="submit" style="font-size: 15px;" class="btn btn-md btn-lg btn-warning text-white">
                                     ORDER
                                 </button>
                             </div>

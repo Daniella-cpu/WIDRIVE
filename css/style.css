@@ -99,6 +99,7 @@ ul.list-text li .list-active {
 .input-ic{
     padding: 4rem 0 0 0;
 }
+
  input[type="text"]{
     padding: 16px;
     border-radius: 0px;
@@ -109,6 +110,10 @@ input[placeholder]{
 }
 #basic-addon{
     border: none;
+}
+.input-group i{
+    font-size: 13px;
+    color: gray;
 }
 
 .reliable{
@@ -313,8 +318,6 @@ input[placeholder]{
 .container2 ul li.active{
     border: 2px solid black;
     padding: 10px 25px 10px 25px;
-    /* width: ;
-    height: 0px; */
 }
 .product{
     width: 90%;
@@ -348,7 +351,6 @@ input[placeholder]{
 .acess-bg{
     padding: 6rem 0 7rem 0;
     background-color: black;
-    /* opacity: .9; */
 }
 .img-p p{
     width: 300px;
@@ -619,11 +621,16 @@ input[placeholder]{
     padding: 0 0 4px 1px;
     font-size: 20px;
 } */
+.error-msg{
+    color: red;
+}
 
 @media(max-width: 800px){
     .product{
         grid-template-columns: repeat(2, 1fr);
+        
     }
+    
 }
 @media(max-width: 200px){
     .product{
@@ -633,4 +640,6 @@ input[placeholder]{
         width: 90%;
         height: 90%;
     }
+    
+    
 }
