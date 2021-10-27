@@ -163,7 +163,11 @@ require_once 'controllers/autoController.php';
             <form action="index.php" method="post">
                 <div class="row justify-content-md-center">
                     <div class="col-md">
-                    <div class="text-danger" style="font-size:10px;">*<?php echo $errors['name']; ?></div>
+                    <?php if(isset($errors['name'])):?>
+                        <div class="text-danger" style="font-size:10px;">*
+                         <?php echo $errors['name'];?>
+                        </div>
+                         <?php endif;?>
                         <div class="input-group mb-3 input1"> 
                             <input type="text" class="form-control" name="name"  placeholder="Your name" >
                             <span class="input-group-text bg-white" id="basic-addon">
@@ -173,8 +177,12 @@ require_once 'controllers/autoController.php';
                           </div>
                         </div>
                    
-                      <div class="col-md">
-                       <div class="text-danger" style="font-size:10px;">*<?php echo $errors['location']; ?></div>
+                      <div class="col-md">                 
+                         <?php if(isset($errors['location'])):?>
+                        <div class="text-danger" style="font-size:10px;">*
+                         <?php echo $errors['location'];?>
+                        </div>
+                         <?php endif;?>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="location" placeholder="where do we pick you at" aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
@@ -186,7 +194,11 @@ require_once 'controllers/autoController.php';
                     
                     
                         <div class="col-md">
-                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['email']; ?></div>
+                         <?php if(isset($errors['email'])):?>
+                         <div class="text-danger" style="font-size:10px;">*
+                           <?php echo $errors['email'];?>
+                         </div>
+                         <?php endif;?>
                             <div class="input-group mb-3">
                                 <input type="email" class="form-control" style="border:none; padding:16px; boder-radius: 0px;" name="email" placeholder="email address"  aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">
@@ -197,7 +209,11 @@ require_once 'controllers/autoController.php';
                        
 
                         <div class="col-md">
-                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['pickup_time']; ?></div>
+                         <?php if(isset($errors['pickup_time'])):?>
+                         <div class="text-danger" style="font-size:10px;">*
+                           <?php echo $errors['pickup_time'];?>
+                         </div>
+                         <?php endif;?>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" name="pickup_time" placeholder="09:09--"  aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">
@@ -209,9 +225,13 @@ require_once 'controllers/autoController.php';
 
                 <div class="row justify-content-md-center mt-1">
                     <div class="col-md">
-                    <div class="text-danger" style="font-size:10px;">*<?php echo $errors['phone_num']; ?></div>
+                       <?php if(isset($errors['phone_num'])):?>
+                        <div class="text-danger" style="font-size:10px;">*
+                         <?php echo $errors['phone_num'];?>
+                        </div>
+                         <?php endif;?>
                         <div class="input-group mb-3">
-                            <input type="number" class="form-control" name="phone_num" placeholder="Phone number" aria-describedby="basic-addon2">
+                            <input type="number" class="form-control" name="phone_num" placeholder="Phone number" style="border:none; padding:16px; boder-radius: 0px;" aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
                                 <i class="bi bi-telephone-fill"></i>
                             </span>
@@ -219,7 +239,11 @@ require_once 'controllers/autoController.php';
                     </div>
                    
                       <div class="col-md">
-                      <div class="text-danger" style="font-size:10px;">*<?php echo $errors['country']; ?></div>
+                        <?php if(isset($errors['country'])):?>
+                        <div class="text-danger" style="font-size:10px;">*
+                         <?php echo $errors['country'];?>
+                         </div>
+                         <?php endif;?>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="country" placeholder="where are you going"  aria-describedby="basic-addon2">
                             <span class="input-group-text bg-white" id="basic-addon">
@@ -230,7 +254,11 @@ require_once 'controllers/autoController.php';
                     
                     
                         <div class="col-md">
-                        <div class="text-danger" style="font-size:10px;">*<?php echo $errors['days']; ?></div>
+                          <?php if(isset($errors['days'])):?>
+                          <div class="text-danger" style="font-size:10px;">*
+                            <?php echo $errors['days'];?>
+                          </div>
+                          <?php endif;?>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" name="days" placeholder="For when" aria-describedby="basic-addon2">
                                 <span class="input-group-text bg-white" id="basic-addon">

@@ -23,9 +23,9 @@ if(isset($_POST['submit'])){
     if(empty($email)){
         $errors['email'] = "Email required";
     }
-    if(!filter_var($phone_num, FILTER_SANITIZE_NUMBER_INT)){
-        $errors['phone_num'] = "Phone number invalid";
-    }
+    // if(!filter_var($phone_num, FILTER_SANITIZE_NUMBER_INT)){
+    //     $errors['phone_num'] = "Phone number invalid";
+    // }
     if(empty($phone_num)){
         $errors['phone_num'] = "Number is required";
     }
@@ -48,9 +48,9 @@ if(isset($_POST['submit'])){
         $token = bin2hex(random_bytes(50));
         $verified = false;
 
-        $sql = "INSERT INTO car_users (name, email, phone_num, country, pickup_time, verified, token, location) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO car_users (name, email, phone_num, country, pickup_time,days, verified, token, location) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ssbsbbss', $name, $email, $phone_num, $country, $pickup_time, $verified, $token, $location);
+        $stmt->bind_param('ssbsbsbss', $name, $email, $phone_num, $country, $pickup_time, $days, $verified, $token, $location);
         
         if($stmt->execute()){
             $user_id = $conn->$insert_id;
