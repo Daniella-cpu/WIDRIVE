@@ -1,6 +1,7 @@
 <?php
 require_once 'controllers/autoController.php';
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,7 @@ require_once 'controllers/autoController.php';
                         <i class="bi bi-envelope-fill" style="background-color: #000; color: #fff; padding: 16px 15px 25px 15px; font-size: 13px;"></i>
                     </div>
                     <div>
-                        <p class="fs-6">+(229) 95 11 99 69</p>
+                        <p class="fs-6">ellaemezieobi456@gmail.com</p>
                     </div>
                 </div>
               </div>
